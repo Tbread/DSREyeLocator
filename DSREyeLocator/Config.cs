@@ -33,17 +33,17 @@ namespace DSREyeLocator
         public bool WrothFlamesOperational = false;
         public bool WrothFlames = false;
         public bool FlamesOnlySelf = false;
-        public string FlamesSelfSpread = "/marking attack <me>";
-        public string FlamesSelfStack = "/marking bind <me>";
-        public string FlamesSelfNone = "/marking ignore <me>";
+        public string FlamesSelfSpread = "/mk attack <me>";
+        public string FlamesSelfStack = "/mk bind <me>";
+        public string FlamesSelfNone = "/mk stop <me>";
         public bool FlamesEmulateDelay = true;
         public bool MarkSpreads = true;
         public bool MarkStacks = true;
         public bool MarkNones = true;
         public bool UseCustomCommands = false;
-        public string CustomCommandsSpread = "/marking attack1\n/marking attack2\n/marking attack3\n/marking attack4";
-        public string CustomCommandsStack = "/marking bind1\n/marking bind2";
-        public string CustomCommandsNone = "/marking ignore1\n/marking ignore2";
+        public string CustomCommandsSpread = "/mk attack1\n/mk attack2\n/mk attack3\n/mk attack4";
+        public string CustomCommandsStack = "/mk bind1\n/mk bind2";
+        public string CustomCommandsNone = "/mk stop1\n/mk stop2";
 
         public int ChangelogWindowVer = 0;
 
