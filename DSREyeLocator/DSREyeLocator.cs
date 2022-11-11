@@ -53,15 +53,7 @@ namespace DSREyeLocator
 
                 if (DalamudReflector.TryGetDalamudStartInfo(out var info))
                 {
-                    OpcodeUpdater.DownloadOpcodes($"https://github.com/NightmareXIV/MyDalamudPlugins/raw/main/opcodes/{info.GameVersion}.txt",
-                        (dic) =>
-                        {
-                            if (dic.TryGetValue("MapEffect", out var code))
-                            {
-                                config.MapEventOpcode = code;
-                                PluginLog.Information($"Downloaded MapEffect opcode 0x{code:X}");
-                            }
-                        });
+                                config.MapEventOpcode = 10A;
                 }
 
                 Headmarker.Init();
