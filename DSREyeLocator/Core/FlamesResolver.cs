@@ -66,20 +66,20 @@ namespace DSREyeLocator.Core
                     {
                         EngangledCommands = new(new string[]
                         {
-                            $"/marking {GetLocalizedBind()}1",
-                            $"/marking {GetLocalizedBind()}2",
+                            $"/mk Bind1",
+                            $"/mk Bind2",
                         });
                         NoneCommands = new(new string[]
                         {
-                            $"/marking {GetLocalizedIgnore()}1",
-                            $"/marking {GetLocalizedIgnore()}2",
+                            $"/mk Stop1",
+                            $"/mk Stop2",
                         });
                         SpreadingCommands = new(new string[]
                         {
-                            $"/marking {GetLocalizedAttack()}1",
-                            $"/marking {GetLocalizedAttack()}2",
-                            $"/marking {GetLocalizedAttack()}3",
-                            $"/marking {GetLocalizedAttack()}4",
+                            $"/marking Attack1",
+                            $"/marking Attack2",
+                            $"/marking Attack3",
+                            $"/marking Attack4",
                         });
                     }
                     foreach (var s in Svc.Party)
@@ -149,13 +149,13 @@ namespace DSREyeLocator.Core
             List<string> l = new();
             if (P.config.FlamesOnlySelf)
             {
-                //l.Add($"/marking off <me>");
+                //l.Add($"/mk off <me>");
             }
             else
             {
                 for (var i = 1; i <= 8; i++)
                 {
-                    l.Add($"/marking off <{i}>");
+                    l.Add($"/mk off <{i}>");
                 }
             }
             if (P.config.WrothFlamesOperational)
@@ -169,66 +169,6 @@ namespace DSREyeLocator.Core
             }
             PluginLog.Debug("====================");
             ClearScheduler?.Dispose();
-        }
-
-        internal static string GetLocalizedAttack()
-        {
-            if (Svc.Data.Language == ClientLanguage.French)
-            {
-                return "attaque";
-            }
-            else if (Svc.Data.Language == ClientLanguage.German)
-            {
-                return "att";
-            }
-            else if (Svc.Data.Language == ClientLanguage.Japanese)
-            {
-                return "attack";
-            }
-            else
-            {
-                return "attack";
-            }
-        }
-
-        internal static string GetLocalizedBind()
-        {
-            if (Svc.Data.Language == ClientLanguage.French)
-            {
-                return "entrave";
-            }
-            else if (Svc.Data.Language == ClientLanguage.German)
-            {
-                return "bind";
-            }
-            else if (Svc.Data.Language == ClientLanguage.Japanese)
-            {
-                return "bind";
-            }
-            else
-            {
-                return "bind";
-            }
-        }
-
-        internal static string GetLocalizedIgnore()
-        {
-            if (Svc.Data.Language == ClientLanguage.French)
-            {
-                return "interdit";
-            }
-            else if (Svc.Data.Language == ClientLanguage.German)
-            {
-                return "ignor";
-            }
-            else if (Svc.Data.Language == ClientLanguage.Japanese)
-            {
-                return "stop";
-            }
-            else
-            {
-                return "ignore";
-            }
         }
 
         internal static void FlamesTick()
