@@ -12,7 +12,7 @@ namespace DSREyeLocator
         public int Version { get; set; } = 1;
 
         public bool EyeEnabled = true;
-        public uint MapEventOpcode = 0x2E0;
+        public uint MapEventOpcode = 0x010A;
         public int VerticalOffset = 100;
         public int HorizontalOffset = 0;
         public float Scale = 1f;
